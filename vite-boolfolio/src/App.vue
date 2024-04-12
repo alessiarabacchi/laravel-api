@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import axios from "axios";
+import ProjectCard from "./components/ProjectCard.vue";
 
 const projects = ref([]);
 
@@ -13,7 +14,6 @@ onMounted(() => {
 
 <template>
     <div v-for="project in projects" :key="project.id">
-        <h3>{{ project.name }}</h3>
-        <p>{{ project.description }}</p>
+        <ProjectCard :project="project" />
     </div>
 </template>
